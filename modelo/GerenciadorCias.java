@@ -19,29 +19,23 @@ public class GerenciadorCias {
 		return empresas;
 	}
 
-	public void search_by_code() {
-		System.out.println("Insira o código: ");
-		String codigo = cin.nextLine();
+	public CiaAerea search_by_code(String codigo) {
 		for (CiaAerea empresa : empresas) {
 			if (empresa.getCodigo().equalsIgnoreCase(codigo)) {
-				System.out.println("Empresa Encontrada: " + empresa.getNome());
-			} else {
-				System.out.println("Erro, nenhuma empresa foi encontrada.");
+				return empresa;
 			}
 		}
+		return null;
 
 	}
 
-	public void serach_by_name() {
-		System.out.println("Insira o nome: ");
-		String nome = cin.nextLine();
+	public CiaAerea serach_by_name(String name) {
 		for (CiaAerea empresa : empresas) {
-			if (empresa.getNome().equalsIgnoreCase(nome)) {
-				System.out.println("Empresa Encontrada: " + empresa.getCodigo());
-			} else {
-				System.out.println("Erro, nenhuma empresa foi encontrada.");
+			if (empresa.getNome().equalsIgnoreCase(name)) {
+				return empresa;
 			}
 		}
+		return null;
 	}
 
 }

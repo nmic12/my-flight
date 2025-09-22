@@ -17,23 +17,16 @@ public class GerenciadorAeronaves {
         aeronaves.add(new Aeronave(codigo, descricao, capacidade));
     }
 
-    public void get_airplanes() {
-        for (Aeronave aeronave : aeronaves) {
-            System.out.println(aeronave.getCodigo());
-            System.out.println(aeronave.getDescricao());
-            System.out.println(aeronave.getCapacidade());
-        }
+    public ArrayList<Aeronave> get_airplanes() {
+        return aeronaves;
     }
 
-    public void search_by_code() {
-        System.out.println("Insira o código: ");
-        String codigo = cin.nextLine();
+    public Aeronave search_by_code(String codigo) {
         for (Aeronave aeronave : aeronaves) {
             if (aeronave.getCodigo().equalsIgnoreCase(codigo)) {
-                System.out.println("Aeronave encontrada: " + aeronave.getDescricao());
-            } else {
-                System.out.println("Erro, nenhuma aeronave encontrada");
+                return aeronave;
             }
         }
+        return null;
     }
 }
