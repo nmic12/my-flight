@@ -15,11 +15,8 @@ public class GerenciadorCias {
 		empresas.add(new CiaAerea(codigo, nome));
 	}
 
-	public void get_cias() {
-		for (CiaAerea empresa : empresas) {
-			System.out.println(empresa.getNome());
-			System.out.println(empresa.getCodigo());
-		}
+	public ArrayList<CiaAerea> get_cias() {
+		return empresas;
 	}
 
 	public void search_by_code() {
