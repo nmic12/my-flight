@@ -6,9 +6,9 @@ import pucrs.myflight.modelo.Rota;
 
 public class VooVariasEscalas extends Voo {
 
-    List Rotas = new ArrayList<Rota>();
+    ArrayList<Rota> Rotas = new ArrayList<>();
     Geo geo = new Geo();
-    public VooVariasEscalas(Rota rotas) {
+    public VooVariasEscalas(ArrayList rotas) {
         super(datahora, status);
         this.Rotas = rotas;
 
@@ -20,6 +20,12 @@ public class VooVariasEscalas extends Voo {
 
     public void remUltimaEscala() {
         Rotas.removeLast();
+    }
+
+    public String getRotaFinal() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Origem: " + Rotas.getFirst().getOrigem() + " | Destino: " + Rotas.getLast().getDestino());
+        return sb;
     }
 
     public double duracaoTotal() {
